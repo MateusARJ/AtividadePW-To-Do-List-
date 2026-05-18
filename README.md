@@ -1,4 +1,7 @@
 # 📋 Minhas Tarefas — To-Do List
+- Disciplina: Programação Web 
+- Professor: Jeferson do Nascimento Soares
+- ALUNO: Mateus de Araujo
 
 Aplicação de lista de tarefas desenvolvida como atividade prática da disciplina de **Programação Web**. O projeto tem como objetivo aplicar conceitos de desenvolvimento front-end moderno utilizando React, TypeScript e Tailwind CSS.
 
@@ -210,5 +213,5 @@ type Task = {
 ## 👤 Autor
 
 **Mateus de Araujo**
-- GitHub: [@MateusAraujo88](https://github.com/MateusAraujo88)
-- Repositório: [AtividadePW-To-Do-List-](https://github.com/MateusAraujo88/AtividadePW-To-Do-List-)
+- GitHub: [@MateusAraujo88]([https://github.com/MateusAraujo88](https://github.com/MateusARJ))
+- Repositório: [AtividadePW-To-Do-List-](https://github.com/MateusARJ/AtividadePW-To-Do-List-.git)
