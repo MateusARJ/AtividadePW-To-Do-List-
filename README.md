@@ -89,32 +89,32 @@ npm run lint
 ```
 AtividadePW-To-Do-List-/
 ├── public/
-│   └── list-favcon.png        # Favicon e logo da aplicação
+│   └── list-favcon.png              # Favicon e logo da aplicação
 ├── src/
 │   ├── app/
-│   │   └── App.tsx            # Configuração de rotas (React Router)
+│   │   └── App.tsx                  # Configuração de rotas (React Router)
 │   ├── components/
-│   │   ├── Header.tsx         # Cabeçalho com logo e botão de configurações
-│   │   ├── SettingsPanel.tsx  # Sidebar retrátil de configurações
-│   │   ├── TaskInput.tsx      # Campo de entrada para nova tarefa
-│   │   ├── TaskFilter.tsx     # Filtros de visualização (Todas/Ativas/Concluídas)
-│   │   ├── TaskItem.tsx       # Card individual de cada tarefa
-│   │   └── Footer.tsx         # Rodapé com link para o repositório
+│   │   ├── Cabecalho.tsx            # Cabeçalho com logo e botão de configurações
+│   │   ├── PainelConfiguracoes.tsx  # Sidebar retrátil de configurações
+│   │   ├── EntradaTarefa.tsx        # Campo de entrada para nova tarefa
+│   │   ├── FiltroDeTarefas.tsx      # Filtros de visualização (Todas/Ativas/Concluídas)
+│   │   ├── ItemTarefa.tsx           # Card individual de cada tarefa
+│   │   └── Rodape.tsx               # Rodapé com link para o repositório
 │   ├── pages/
-│   │   └── Home.tsx           # Página principal — gerencia todo o estado da aplicação
+│   │   └── Home.tsx                 # Página principal — gerencia todo o estado da aplicação
 │   ├── style/
-│   │   ├── index.css          # Importação do Tailwind CSS
-│   │   └── App.css            # Estilos globais adicionais
+│   │   ├── index.css                # Importação do Tailwind CSS
+│   │   └── App.css                  # Estilos globais adicionais
 │   ├── types/
-│   │   └── task.ts            # Tipagem TypeScript do modelo de tarefa
-│   └── main.tsx               # Ponto de entrada da aplicação React
-├── index.html                 # HTML base do Vite
-├── vite.config.ts             # Configuração do Vite e plugins
-├── tsconfig.json              # Configuração raiz do TypeScript
-├── tsconfig.app.json          # Configuração do TypeScript para o código da aplicação
-├── tsconfig.node.json         # Configuração do TypeScript para o ambiente Node (Vite)
-├── eslint.config.js           # Configuração do ESLint
-└── package.json               # Dependências e scripts do projeto
+│   │   └── task.ts                  # Tipagem TypeScript do modelo de tarefa
+│   └── main.tsx                     # Ponto de entrada da aplicação React
+├── index.html                       # HTML base do Vite
+├── vite.config.ts                   # Configuração do Vite e plugins
+├── tsconfig.json                    # Configuração raiz do TypeScript
+├── tsconfig.app.json                # Configuração do TypeScript para o código da aplicação
+├── tsconfig.node.json               # Configuração do TypeScript para o ambiente Node (Vite)
+├── eslint.config.js                 # Configuração do ESLint
+└── package.json                     # Dependências e scripts do projeto
 ```
 
 ---
@@ -125,12 +125,12 @@ AtividadePW-To-Do-List-/
 main.tsx
   └── App.tsx  (BrowserRouter + Routes)
         └── Home.tsx  (estado global da aplicação)
-              ├── Header.tsx
-              │     └── SettingsPanel.tsx  (sidebar de configurações)
-              ├── TaskInput.tsx            (adicionar tarefa)
-              ├── TaskFilter.tsx           (filtrar tarefas)
-              ├── TaskItem.tsx × N         (cada tarefa da lista)
-              └── Footer.tsx
+              ├── Cabecalho.tsx
+              │     └── PainelConfiguracoes.tsx  (sidebar de configurações)
+              ├── EntradaTarefa.tsx              (adicionar tarefa)
+              ├── FiltroDeTarefas.tsx            (filtrar tarefas)
+              ├── ItemTarefa.tsx × N             (cada tarefa da lista)
+              └── Rodape.tsx
 ```
 
 ### Gerenciamento de estado
@@ -174,22 +174,22 @@ Ao recarregar a página, os dados são restaurados automaticamente.
 ### `Home.tsx`
 Página principal e única da aplicação. Centraliza todo o estado e distribui handlers para os componentes filhos. Aplica a classe de tema (`bg-slate-900` / `bg-gray-50`) na div raiz conforme o `darkMode`.
 
-### `Header.tsx`
-Exibe o logo (`/public/list-favcon.png`) e o título da aplicação. Renderiza o `SettingsPanel` posicionado absolutamente à direita.
+### `Cabecalho.tsx`
+Exibe o logo (`/public/list-favcon.png`) e o título da aplicação. Renderiza o `PainelConfiguracoes` posicionado absolutamente à direita.
 
-### `SettingsPanel.tsx`
+### `PainelConfiguracoes.tsx`
 Botão de engrenagem que, ao ser clicado, abre uma sidebar retrátil fixada à direita da tela. Contém um toggle switch para alternar o modo escuro. Um backdrop invisível cobre o restante da tela para fechar a sidebar ao clicar fora.
 
-### `TaskInput.tsx`
+### `EntradaTarefa.tsx`
 Campo de texto controlado com botão "Adicionar". Suporta submissão via tecla `Enter`. Estilizado de acordo com o tema ativo.
 
-### `TaskFilter.tsx`
+### `FiltroDeTarefas.tsx`
 Grupo de três botões em formato de abas pill (`Todas`, `Ativas`, `Concluídas`). O filtro ativo recebe destaque visual. Exibe um badge com a contagem de tarefas pendentes.
 
-### `TaskItem.tsx`
+### `ItemTarefa.tsx`
 Representa uma tarefa individual. Possui dois modos: **visualização** (checkbox + texto + botões de editar/excluir) e **edição** (input inline + botões de salvar/cancelar). O checkbox é um botão circular customizado que fica azul ao ser marcado.
 
-### `Footer.tsx`
+### `Rodape.tsx`
 Rodapé simples com link para o repositório no GitHub.
 
 ---
@@ -199,8 +199,8 @@ Rodapé simples com link para o repositório no GitHub.
 ```typescript
 // src/types/task.ts
 type Task = {
-    id: string;        // UUID gerado via crypto.randomUUID()
-    text: string;      // Texto da tarefa
+    id: string;         // UUID gerado via crypto.randomUUID()
+    text: string;       // Texto da tarefa
     completed: boolean; // Status de conclusão
 }
 ```
