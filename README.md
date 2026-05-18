@@ -213,5 +213,5 @@ type Task = {
 ## 👤 Autor
 
 **Mateus de Araujo**
-- GitHub: [@MateusAraujo88]([https://github.com/MateusAraujo88](https://github.com/MateusARJ))
+- GitHub: [@MateusARJ]([https://github.com/MateusAraujo88](https://github.com/MateusARJ))
 - Repositório: [AtividadePW-To-Do-List-](https://github.com/MateusARJ/AtividadePW-To-Do-List-.git)
